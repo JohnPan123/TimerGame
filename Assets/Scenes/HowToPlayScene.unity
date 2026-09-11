@@ -151,9 +151,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 731797985}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 13}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -237}
   m_SizeDelta: {x: 1000, y: 275}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &291829228
@@ -179,14 +179,14 @@ MonoBehaviour:
   m_text: '- Use the WASD keys to point your food eater in one of four directions.
 
     -
-    You cannot move him; he will always remain at the scren center.
+    You cannot move him; he will always remain at the screen center.
 
-    - Face him
-    in the direction of the incoming food so he can eat it (it needs to go in his
-    mouth) and score a point for every food he eats.
+    - Face
+    him in the direction of the incoming food so he can eat it (it needs to go in
+    his mouth) and score a point for every food he eats.
 
-    - Be wary, though; for
-    every food you miss, you lose one point instead.'
+    - Be wary, though;
+    for every food you miss, you lose one point instead.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
