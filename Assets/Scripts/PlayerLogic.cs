@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerLogic : MonoBehaviour
 {
+    public Animator jawAnimator;
     private InputAction movementInput;
     private Rigidbody2D playerRB;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -14,7 +15,8 @@ public class PlayerLogic : MonoBehaviour
 
     private void FixedUpdate()
     {
-        PlayerRotation();
+        if (!jawAnimator.GetBool("FoodPresent"))
+            PlayerRotation();
     }
     private float targetAngle = 0f;
     private float angularSpeed = 20f;

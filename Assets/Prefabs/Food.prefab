@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoodLogic
   foodRB: {fileID: 2586174019372597576}
+  foodAnimator: {fileID: 4353921609841523814}
 --- !u!212 &3652168634989071236
 SpriteRenderer:
   serializedVersion: 2
