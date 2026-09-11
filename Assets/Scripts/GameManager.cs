@@ -5,13 +5,9 @@ public class GameManager : MonoBehaviour
 {
     public SpawnerLogic spawnerScript;
     public TextMeshProUGUI scoreText;
-    private static int score;
-    private float timerForNextSpawn = 0;
+    private int score = 0;
+    private float timerForNextSpawn = 0f;
     private float timeToSpawnFood = 1f;
-    private void Start()
-    {
-        score = 0;
-    }
     // Update is called once per frame
     void Update()
     {
@@ -22,11 +18,9 @@ public class GameManager : MonoBehaviour
             spawnerScript.SpawnFood();
             timerForNextSpawn = 0;
         }
-
-        scoreText.text = $"Score: {score}";
     }
-    public static void IncreaseScore()
+    public void IncreaseScore()
     {
-        score++;
+        scoreText.text = $"Score: {++score}";
     }
 }
