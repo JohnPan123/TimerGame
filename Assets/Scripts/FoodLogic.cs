@@ -19,7 +19,7 @@ public class FoodLogic : MonoBehaviour
          * how long they were alive for. The global spawn timer cannot do this (not simply, 
          * at least).
          */
-        if (timeAlive >= maxAliveTime) //
+        if (timeAlive >= maxAliveTime)
             foodAnimator.SetBool("AliveTooLong" , true);
     }
 
