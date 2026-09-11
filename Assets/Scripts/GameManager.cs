@@ -19,8 +19,17 @@ public class GameManager : MonoBehaviour
             timerForNextSpawn = 0;
         }
     }
+
+    /// <summary>
+    /// Increases the score by one and updates the score text on the player's screen.
+    /// </summary>
     public void IncreaseScore()
     {
         scoreText.text = $"Score: {++score}";
+    }
+
+    public void DecreaseScore()
+    {
+        scoreText.text = $"Score: {--score}";
     }
 }

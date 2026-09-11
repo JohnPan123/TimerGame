@@ -11,7 +11,11 @@ public class TurnSensorLogic : MonoBehaviour
     {
         foodAbsent = true;
     }
-
+    /// <summary>
+    /// Returns a boolean value that represents whether or not there is food in 
+    /// the player's mouth.
+    /// </summary>
+    /// <returns>Return true if food is not in the player's mouth. False otherwise</returns>
     public static bool NoFoodInMouth()
     {
         return foodAbsent;

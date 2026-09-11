@@ -14,10 +14,19 @@ public class FoodLogic : MonoBehaviour
     private void Update()
     {
         timeAlive += Time.deltaTime;
-
-        if (timeAlive >= maxAliveTime)
+        /*
+         * This timer makes sense to have on the food objects themselves. They each track
+         * how long they were alive for. The global spawn timer cannot do this (not simply, 
+         * at least).
+         */
+        if (timeAlive >= maxAliveTime) //
             foodAnimator.SetBool("AliveTooLong" , true);
     }
+
+    /// <summary>
+    /// Not used in code; used by the animator to destroy the food when the "squish" animation 
+    /// is finished or when the "FadeAwayDeath" animation is finished.
+    /// </summary>
     public void DestroyFood()
     {
         Destroy(gameObject);

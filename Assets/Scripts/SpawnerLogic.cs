@@ -21,6 +21,12 @@ public class SpawnerLogic : MonoBehaviour
     {
         transform.position = locations[Random.Range(0, 4)];
     }
+
+    /// <summary>
+    /// Spawns food in the proper orientation. This is because the animator only has one animation
+    /// for squishing the food; it does this in the y-direction. Thus, the spawner is rotated
+    /// as it teleports around so that the spawned food can takes on its rotation for the squish animation.
+    /// </summary>
     public void SpawnFood()
     {
         if (transform.position.x > 0)

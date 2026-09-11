@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SensorLogic : MonoBehaviour
+public class BiteSensorLogic : MonoBehaviour
 {
     public GameObject upperJaw;
     public GameObject lowerJaw;
