@@ -25,10 +25,21 @@ public class FoodLogic : MonoBehaviour
 
     /// <summary>
     /// Not used in code; used by the animator to destroy the food when the "squish" animation 
-    /// is finished or when the "FadeAwayDeath" animation is finished.
+    /// is finished.
     /// </summary>
-    public void DestroyFood()
+    public void DestroySuccessfullyEatenFood()
     {
+        GameManager.IncreaseScore();
+        Destroy(gameObject);
+    }
+
+    /// <summary>
+    /// Not used in code; used by the animator to destroy the food when the "FadeAwayDeath" 
+    /// animation is finished.
+    /// </summary>
+    public void DestroyFailedToEatFood()
+    {
+        GameManager.DecreaseScore();
         Destroy(gameObject);
     }
 }

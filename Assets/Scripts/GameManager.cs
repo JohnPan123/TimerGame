@@ -1,16 +1,24 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public SpawnerLogic spawnerScript;
     public TextMeshProUGUI scoreText;
-    private int score = 0;
+    public TextMeshProUGUI timeRemainingTimer;
+    private static int score;
+    private float totalGameTimeRemaining = 60f;
     private float timerForNextSpawn = 0f;
     private float timeToSpawnFood = 1f;
+    private void Start()
+    {
+        score = 0;
+    }
     // Update is called once per frame
     void Update()
     {
+        totalGameTimeRemaining -= Time.deltaTime;
         timerForNextSpawn += Time.deltaTime;
         /*
          * This is the looping timer for the food spawn; Every so often it spawns another 
@@ -22,18 +30,36 @@ public class GameManager : MonoBehaviour
             spawnerScript.SpawnFood();
             timerForNextSpawn = 0;
         }
+
+        scoreText.text = $"Score: {score}";
+        timeRemainingTimer.text = $"Time Remaining: {(int)totalGameTimeRemaining}";
+
+        if ((int)totalGameTimeRemaining <= 0)
+            SceneManager.LoadScene("GameOverScene");
     }
 
     /// <summary>
-    /// Increases the score by one and updates the score text on the player's screen.
+    /// Increases the score by one.
     /// </summary>
-    public void IncreaseScore()
+    public static void IncreaseScore()
     {
-        scoreText.text = $"Score: {++score}";
+        score++;
     }
 
-    public void DecreaseScore()
+    /// <summary>
+    /// Decreases the score by one.
+    /// </summary>
+    public static void DecreaseScore()
     {
-        scoreText.text = $"Score: {--score}";
+        score--;
+    }
+
+    /// <summary>
+    /// Returns the score value.
+    /// </summary>
+    /// <returns>Returns the score value.</returns>
+    public static int GetScore()
+    {
+        return score;
     }
 }
