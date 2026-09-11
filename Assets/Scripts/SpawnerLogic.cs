@@ -17,27 +17,21 @@ public class SpawnerLogic : MonoBehaviour
         locations.Add(new Vector2(0 , -(maxY + 2)));
     }
 
-    float timerForNextSpawn = 0;
-    float timeToSpawnFood = 1f;
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        timerForNextSpawn += Time.deltaTime;
         transform.position = locations[Random.Range(0, 4)];
+    }
+    public void SpawnFood()
+    {
+        if (transform.position.x > 0)
+            transform.rotation = Quaternion.Euler(0, 0, 180);
+        else if (transform.position.x < 0)
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        else if (transform.position.y > 0)
+            transform.rotation = Quaternion.Euler(0, 0, -90);
+        else if (transform.position.y < 0)
+            transform.rotation = Quaternion.Euler(0, 0, 90);
 
-        if (timerForNextSpawn >= timeToSpawnFood)
-        {
-            if (transform.position.x > 0)
-                transform.rotation = Quaternion.Euler(0 , 0 , 180);
-            else if (transform.position.x < 0)
-                transform.rotation = Quaternion.Euler(0, 0, 0);
-            else if (transform.position.y > 0)
-                transform.rotation = Quaternion.Euler(0, 0, -90);
-            else if (transform.position.y < 0)
-                transform.rotation = Quaternion.Euler(0, 0, 90);
-
-            Instantiate(food , transform.position , transform.rotation);
-            timerForNextSpawn = 0;
-        }
+        Instantiate(food, transform.position, transform.rotation);
     }
 }

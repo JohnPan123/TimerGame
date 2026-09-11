@@ -15,8 +15,10 @@ public class PlayerLogic : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!jawAnimator.GetBool("FoodPresent"))
+        if (TurnSensorLogic.NoFoodInMouth())
             PlayerRotation();
+        else
+            playerRB.angularVelocity = angularSpeed * Mathf.DeltaAngle(playerRB.rotation , targetAngle);
     }
     private float targetAngle = 0f;
     private float angularSpeed = 20f;
