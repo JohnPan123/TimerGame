@@ -13,6 +13,8 @@ public class PlayerLogic : MonoBehaviour
         playerRB = GetComponent<Rigidbody2D>();
     }
 
+    //Running physics updates (angular velocity) together with FixedUpdate is better because of keeping things
+    //in sync with the physics ticks.
     private void FixedUpdate()
     {
         if (TurnSensorLogic.NoFoodInMouth())

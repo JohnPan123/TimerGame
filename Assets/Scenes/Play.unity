@@ -750,7 +750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   spawnerScript: {fileID: 1139234319}
-  scoreText: {fileID: 0}
+  scoreText: {fileID: 1032769366}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0

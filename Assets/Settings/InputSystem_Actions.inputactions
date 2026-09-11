@@ -15,26 +15,6 @@
                     "interactions": "",
                     "initialStateCheck": true,
                     "priority": 0
-                },
-                {
-                    "name": "Look",
-                    "type": "Value",
-                    "id": "ebc3d4ec-892d-437b-8664-8b24afbc5698",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true,
-                    "priority": 0
-                },
-                {
-                    "name": "Attack",
-                    "type": "Button",
-                    "id": "36d1474a-3eec-4c3a-9afd-96da4c0e12b0",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false,
-                    "priority": 0
                 }
             ],
             "bindings": [
@@ -136,28 +116,6 @@
                     "action": "Position",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "9e69fae7-efe4-4554-bd15-1a01e8fc87f1",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "af4dc9fc-0b04-457d-b544-f731e903b4f0",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Attack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         },

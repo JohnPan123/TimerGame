@@ -12,7 +12,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         timerForNextSpawn += Time.deltaTime;
-
+        /*
+         * This is the looping timer for the food spawn; Every so often it spawns another 
+         * piece of food for the player to eat. The other timer, on the FoodLogic script
+         * is a one time per food (if it was not eaten first) timer.
+         */
         if (timerForNextSpawn >= timeToSpawnFood)
         {
             spawnerScript.SpawnFood();

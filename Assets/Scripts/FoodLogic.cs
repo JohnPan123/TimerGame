@@ -17,7 +17,7 @@ public class FoodLogic : MonoBehaviour
         /*
          * This timer makes sense to have on the food objects themselves. They each track
          * how long they were alive for. The global spawn timer cannot do this (not simply, 
-         * at least).
+         * at least). This is a one time use timer.
          */
         if (timeAlive >= maxAliveTime)
             foodAnimator.SetBool("AliveTooLong" , true);
