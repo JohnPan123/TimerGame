@@ -3,8 +3,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerLogic : MonoBehaviour
 {
-    public GameObject UpperJaw;
-    public GameObject LowerJaw;
     private InputAction movementInput;
     private Rigidbody2D playerRB;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -38,14 +36,5 @@ public class PlayerLogic : MonoBehaviour
             targetAngle = 270f;
 
         playerRB.angularVelocity = angularSpeed * Mathf.DeltaAngle(playerRB.rotation , targetAngle);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Food")
-        {
-            UpperJaw.GetComponent<JawsLogic>().Bite();
-            LowerJaw.GetComponent<JawsLogic>().Bite();
-        }
     }
 }

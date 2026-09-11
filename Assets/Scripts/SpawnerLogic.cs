@@ -17,16 +17,15 @@ public class SpawnerLogic : MonoBehaviour
         locations.Add(new Vector2(0 , -(maxY + 2)));
     }
 
-    float timeElapsed = 0;
+    float timerForNextSpawn = 0;
     float timeToSpawnFood = 1f;
     // Update is called once per frame
     void Update()
     {
-        timeElapsed += Time.deltaTime;
+        timerForNextSpawn += Time.deltaTime;
         transform.position = locations[Random.Range(0, 4)];
-        float rotation;
 
-        if (timeElapsed >= timeToSpawnFood)
+        if (timerForNextSpawn >= timeToSpawnFood)
         {
             if (transform.position.x > 0)
                 transform.rotation = Quaternion.Euler(0 , 0 , 180);
@@ -38,6 +37,7 @@ public class SpawnerLogic : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0, 0, 90);
 
             Instantiate(food , transform.position , transform.rotation);
+            timerForNextSpawn = 0;
         }
     }
 }
