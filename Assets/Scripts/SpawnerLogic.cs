@@ -1,0 +1,43 @@
+using UnityEngine;
+using System.Collections.Generic;
+
+public class SpawnerLogic : MonoBehaviour
+{
+    public GameObject food;
+    private List<Vector2> locations = new List<Vector2>();
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        float maxX = Camera.main.aspect * Camera.main.orthographicSize;
+        float maxY = Camera.main.orthographicSize;
+
+        locations.Add(new Vector2(maxX + 2 , 0));
+        locations.Add(new Vector2(-(maxX + 2) , 0));
+        locations.Add(new Vector2(0 , maxY + 2));
+        locations.Add(new Vector2(0 , -(maxY + 2)));
+    }
+
+    float timeElapsed = 0;
+    float timeToSpawnFood = 1f;
+    // Update is called once per frame
+    void Update()
+    {
+        timeElapsed += Time.deltaTime;
+        transform.position = locations[Random.Range(0, 4)];
+        float rotation;
+
+        if (timeElapsed >= timeToSpawnFood)
+        {
+            if (transform.position.x > 0)
+                transform.rotation = Quaternion.Euler(0 , 0 , 180);
+            else if (transform.position.x < 0)
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            else if (transform.position.y > 0)
+                transform.rotation = Quaternion.Euler(0, 0, -90);
+            else if (transform.position.y < 0)
+                transform.rotation = Quaternion.Euler(0, 0, 90);
+
+            Instantiate(food , transform.position , transform.rotation);
+        }
+    }
+}
