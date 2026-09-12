@@ -14,7 +14,7 @@ HOW TO PLAY
 
 
 
-\- Face him in the direction of the incoming foods so he can eat them (they needs to go in his mouth) and score a point for every food he eats.
+\- Face him in the direction of the incoming foods so he can eat them (they need to go in his mouth) and score a point for every food he eats.
 
 
 
